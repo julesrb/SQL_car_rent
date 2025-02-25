@@ -12,9 +12,3 @@ This project focuses on implementing an **H2 database** and the **DAO (Data Acce
 - JDBC  
 - H2 Database
 - SQL
-
-## Setup  
-1. Clone the repository:  
-   ```sh
-   git clone https://github.com/your-username/car-management.git
-   cd car-management
