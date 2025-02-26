@@ -1,6 +1,10 @@
 import java.util.List;
 
 public interface CustomerDAO {
-    List<Customer> selectAll(int customerId);
-    void add(String name, int customer_id);
+    List<Customer> selectAll();
+    void updateRent(Car car, int customerId);
+    void updateReturn(int rentedCarId);
+    List<Customer> selectCustomer(int customerId);
+    List<Customer> selectRentedCar(int rentedCar);
+    void add(String name);
 }

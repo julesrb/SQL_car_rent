@@ -40,7 +40,7 @@ public class CarDAOImplementation implements CarDAO {
             while (sqlResult.next()) {
                 int id = sqlResult.getInt("ID");
                 String name = sqlResult.getString("NAME");
-                cars.add(new Car(id, name));
+                cars.add(new Car(id, name, companyId));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -56,6 +56,39 @@ public class CarDAOImplementation implements CarDAO {
             e.printStackTrace();
         }
 
+    }
+
+    public List<Car> selectCompanyId(int companyId) {
+        List<Car> cars = new ArrayList<>();;
+        try (Connection conn = DriverManager.getConnection(H2dbClient.getDbUrl());
+             Statement stmt = conn.createStatement()) {
+            ResultSet sqlResult = stmt.executeQuery("SELECT * FROM car WHERE company_id = " + companyId + ";");
+            while (sqlResult.next()) {
+                int id = sqlResult.getInt("ID");
+                String name = sqlResult.getString("NAME");
+                cars.add(new Car(id, name, companyId));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return cars;
+    }
+
+    public List<Car> selectCarId(int carId) {
+        List<Car> cars = new ArrayList<>();;
+        try (Connection conn = DriverManager.getConnection(H2dbClient.getDbUrl());
+             Statement stmt = conn.createStatement()) {
+            ResultSet sqlResult = stmt.executeQuery("SELECT * FROM car WHERE id = " + carId + ";");
+            while (sqlResult.next()) {
+                int id = sqlResult.getInt("ID");
+                String name = sqlResult.getString("NAME");
+                int companyId = sqlResult.getInt("COMPANY_ID");
+                cars.add(new Car(id, name, companyId));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return cars;
     }
 
 }

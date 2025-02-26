@@ -1,12 +1,12 @@
-public class Car {
+public class Customer {
     private String  name;
-    private int  company_id;
     private int     id;
+    private int rentedCarId;
 
-    public Car(int id, String name, int company_id) {
+    public Customer(int id, String name,  int rentedCarId) {
         this.name = name;
         this.id = id;
-        this.company_id = company_id;
+        this.rentedCarId = rentedCarId;
     }
 
     String getName() {
@@ -17,8 +17,8 @@ public class Car {
         return id;
     }
 
-    int getCompanyId() {
-        return company_id;
+    int getRentedCarId() {
+        return rentedCarId;
     }
 
     @Override

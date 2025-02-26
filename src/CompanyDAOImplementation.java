@@ -14,6 +14,10 @@ public class CompanyDAOImplementation implements CompanyDAO {
     static final String SELECT_ALL = """
                                SELECT *
                                FROM company;""";
+    static final String SELECT = """
+                               SELECT name
+                               WHERE id = 
+                               FROM company;""";
 
 
     private final H2DbClient H2dbClient;
@@ -43,6 +47,22 @@ public class CompanyDAOImplementation implements CompanyDAO {
             e.printStackTrace();
         }
         return companies;
+    }
+
+    public Company select(int companyId) {
+        Company company = null;
+        try (Connection conn = DriverManager.getConnection(H2dbClient.getDbUrl());
+             Statement stmt = conn.createStatement()) {
+            ResultSet sqlResult = stmt.executeQuery("SELECT * FROM company WHERE id = " + companyId);
+            while (sqlResult.next()) {
+                int id = sqlResult.getInt("ID");
+                String name = sqlResult.getString("NAME");
+                company = new Company(id, name);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return company;
     }
 
     @Override
