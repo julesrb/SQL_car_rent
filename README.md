@@ -1,4 +1,4 @@
-# Car Management System - IN CONSTRUCTION
+# Car Management System
 
 This project focuses on implementing an **H2 database** and the **DAO (Data Access Object) architecture** to manage car data efficiently.  
 
