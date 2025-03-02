@@ -1,4 +1,4 @@
-# Car Management System  - IN CONSTRUCTION
+# Car Management System - IN CONSTRUCTION
 
 This project focuses on implementing an **H2 database** and the **DAO (Data Access Object) architecture** to manage car data efficiently.  
 
@@ -10,5 +10,11 @@ This project focuses on implementing an **H2 database** and the **DAO (Data Acce
 ## Technologies  
 - Java  
 - JDBC  
-- H2 Database
-- SQL
+- H2 Database  
+- SQL  
+
+## Running the Application  
+To run the project:
+
+```bash
+./gradlew run

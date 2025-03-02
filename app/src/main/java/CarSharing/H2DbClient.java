@@ -1,3 +1,5 @@
+package CarSharing;
+
 import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.SQLException;
@@ -6,7 +8,7 @@ import java.sql.Connection;
 public class H2DbClient {
 
     static final String JDBC_DRIVER = "org.h2.Driver";
-    static final String DB_URL = "jdbc:h2:./src/carsharing/db/carsharing";
+    static final String DB_URL = "jdbc:h2:./db/carsharing";
 
     public H2DbClient() {
         try {

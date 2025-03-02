@@ -1,3 +1,5 @@
+package CarSharing;
+
 import java.util.List;
 
 public interface CustomerDAO {
